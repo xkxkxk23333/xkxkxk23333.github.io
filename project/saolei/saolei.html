@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /**{*/
+            /*box-sizing: border-box;*/
+        /*}*/
+        *{
+            margin:0;
+            padding: 0;
+            list-style: none;
+            user-select: none;
+            text-decoration: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+            background: url('scene.jpg');
+            background-size: 100%;
+
+        }
+        .scene{
+            position: fixed;
+            top:50px;
+            width: 502px;
+            height: 502px;
+            border-left: 1px solid #ccc;
+            border-top: 1px solid #ccc;
+            left:0;
+            right:0;
+            margin:auto;
+        }
+        .block{
+            width: 49px;
+            height: 49px;
+            background-color: #ddd;
+            background-image:url('bg.jpg') ;
+            background-size: contain;
+            float: left;
+            border-right:1px solid #ccc;
+            border-bottom:1px solid #ccc;
+            font-size: 20px;
+            line-height: 49px;
+            text-align: center;
+        }
+        .lei{
+
+        }
+        .show{
+            background: red;
+            background-image: url('lei.jpg');
+            background-size:100% ;
+        }
+        .fla{
+            background: cyan;
+        }
+        .control{
+            width: 200px;
+            height: 100%;
+            position: fixed;
+            top:20px;
+            left: 0;
+        }
+        .control>div{
+            width: 150px;
+            height: 60px;
+            background: cyan;
+            margin:30px auto;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .time span{
+            font-weight: bold;
+        }
+        .control a{
+            display: block;
+            width: 150px;
+            height: 60px;
+            background: cyan;
+            margin:30px auto;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: #000;
+        }
+        ul{
+            height: 150px;
+            width: 100%;
+            background: red;
+            display: none;
+            font-size: 12px;
+            line-height: 40px;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 99;
+        }
+        .mask2{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            z-index: 99;
+        }
+        .overbox {
+            width: 484px;
+            height: 419px;
+            background: url('over.png') no-repeat center;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            font-size: 25px;
+            font-weight: 300;
+            color: #000;
+        }
+        .score1 {
+            width: 100px;
+            height: 40px;
+            margin-left: 290px;
+            margin-top: 150px;
+            line-height: 40px;
+        }
+        .maxscore {
+            width: 100px;
+            height: 40px;
+            margin-left: 290px;
+            margin-top: 5px;
+            line-height: 40px;
+        }
+        .btns {
+            width: 250px;
+            height: 93px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .resta {
+            width: 93px;
+            height: 93px;
+            background: url('restart.png');
+            float: left;
+            cursor: pointer;
+            transition: all 1s;
+        }
+        .quit {
+            width: 93px;
+            height: 93px;
+            background: url('quit.png');
+            float: right;
+            cursor: pointer;
+            background-size: 100% 100%;
+            transition: all 1s;
+        }
+        .startScene{
+            position: fixed;
+            top:50px;
+            width: 502px;
+            height: 502px;
+            left:0;
+            right:0;
+            margin:auto;
+            /*background: cornflowerblue;*/
+        }
+        .startScene>div{
+            width: 150px;
+            height: 60px;
+            background: cyan;
+            margin:30px auto;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .scene1{
+            display: none;
+        }
+        .choose{
+            position: fixed;
+            top:50px;
+            width: 502px;
+            height: 502px;
+            left:0;
+            right:0;
+            margin:auto;
+            background: #b1ebeb;
+            display: none;
+        }
+        .choose>div{
+            width: 150px;
+            height: 60px;
+            background: cyan;
+            margin:30px auto;
+            text-align: center;
+            line-height: 60px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div class="startScene">
+    <div class="kaishi">开始游戏</div>
+    <div class="guanqia">关卡选择</div>
+</div>
+<div class="choose">
+    <div class="easy">简单</div>
+    <div class="formal">一般</div>
+    <div class="difficult">困难</div>
+</div>
+<div class="scene1">
+    <div class="scene">
+
+    </div>
+    <div class="control">
+        <div class="time">当前已用:<span>000</span>秒</div>
+        <div class="flag">还剩<span></span>个雷</div>
+        <!--<div class="restart">重新开始</div>-->
+        <div class="status">关卡选择</div>
+        <div class="paihang">排行榜
+            <ul></ul>
+        </div>
+    </div>
+</div>
+<div class="mask ma">
+    <div class="overbox">
+        <div class="score1"></div>
+        <div class="maxscore"></div>
+        <div class="btns">
+            <div class="resta"></div>
+            <a href=""><div class="quit qu"></div></a>
+        </div>
+    </div>
+</div>
+<div class="mask2 ma">
+
+        <div class="btns">
+            <div class="resta"></div>
+            <a href=""><div class="quit qu"></div></a>
+        </div>
+</div>
+</body>
+<script src="jquery.js"></script>
+<script>
+    $(document).ready(function () {
+        var guanq=10;
+        var bili=0.9;
+        $(".kaishi").click(function () {
+            $(".startScene").slideUp(300);
+            $(".choose").slideDown(100);
+        //    $(".scene1").slideDown(100);
+        });
+        $(".guanqia").click(function () {
+            $(".startScene").slideUp(300);
+            $(".choose").slideDown(100);
+        });
+        $(".easy").click(function () {
+            guanq=10;
+            bili=0.9;
+            $(".choose").slideUp(300);
+            $(".scene1").slideDown(100);
+            $(".scene").empty();
+            create();
+        });
+        $(".formal").click(function () {
+            guanq=20;
+            bili=0.8;
+            $(".choose").slideUp(300);
+            $(".scene1").slideDown(100);
+            $(".scene").empty();
+            create();
+        });
+        $(".difficult").click(function () {
+            guanq=30;
+            bili=0.7;
+            $(".choose").slideUp(300);
+            $(".scene1").slideDown(100);
+            $(".scene").empty();
+            create();
+        });
+
+       var startFlag=false;
+       function create() {
+        do{
+            ms=0;
+            startFlag=true;
+            $(".scene").empty();
+            for(i=0;i<10;i++){
+                for(j=0;j<10;j++){
+                    var isLei=Math.random()>bili;
+                    $("<div>").addClass(function () {
+                        if(isLei){
+                            return "block lei";
+                        }else{
+                            return "block";
+                        }
+                    }).attr("id",i+"-"+j)
+                            .data("pos",{x:i,y:j})
+                            .mousedown(mousedownEvent)
+                            .appendTo(".scene");
+                }
+        }}while($(".lei").length!=guanq);
+        $(".flag span").html(guanq)
+       }
+        create();
+        function restart() {
+            tim=null;
+            clearInterval(tim);
+            create();
+            $(".time span").html("000");
+            ms=0;
+            $("fla").removeClass("fla");
+            flag=guanq;
+            tim=setInterval(piaomiao,1000);
+            $(".flag").html("还剩"+flag+"个雷")
+        }
+        //重新开始
+        $(".restart").click(function () {
+
+            tim=null;
+            clearInterval(tim);
+            restart();
+        });
+        //计时
+        var ms=0;
+        function piaomiao() {
+            ms++;
+           // var mms=ms<10?("00"+ms):ms;
+            if(ms<10){
+                mms="00"+ms;
+            }else if(ms<100){
+                mms="0"+ms;
+            }else{
+                mms=ms;
+            }
+            $(".time span").html(mms);
+        }
+        var tim;
+
+        function mousedownEvent(e) {
+            if(e.which==1){
+                leftClick.call(this);
+            }else{
+                rightClick.call(this);
+            }
+
+        }
+        $(document).on("contextmenu",function (e) {
+            e.preventDefault();
+        })
+        function leftClick() {
+            if($(this).hasClass("fla")){
+                return;
+            }
+            if($(this).hasClass("lei")){
+                $(".lei").addClass("show");
+                clearInterval(tim);
+                alert("game over");
+                setTimeout(fail,100);
+                $(".lei").removeClass("fla");
+                $(".scene div").unbind("mousedown");
+            }else{
+                $(this).addClass("num");
+                var pos=$(this).data("pos");
+                var n=0;
+/*                if($("#"+(pos.x-1)+(pos.y-1)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x-1)+(pos.y)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x-1)+(pos.y+1)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x)+(pos.y-1)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x)+(pos.y+1)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x+1)+(pos.y-1)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x+1)+(pos.y)).hasClass("lei")){
+                    n++;
+                }
+                if($("#"+(pos.x+1)+(pos.y+1)).hasClass("lei")){
+                    n++;
+                }*/
+                for(var i=pos.x-1;i<=pos.x+1;i++){
+                    for(var j=pos.y-1;j<=pos.y+1;j++){
+                        if($("#"+i+"-"+j).hasClass("lei")){
+                            n++;
+                        }
+                    }
+                }
+                $(this).css({
+                    background:"white"
+                }).html(n);
+                if(n==0){
+                    for(var i=pos.x-1;i<=pos.x+1;i++){
+                        for(var j=pos.y-1;j<=pos.y+1;j++){
+                            var obj=$("#"+i+"-"+j);
+                            if(obj.length==1){
+                                if (!obj.hasClass("num")){
+                                    leftClick.call(obj[0]);
+                                }
+
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+        var flag=$(".lei").length;
+        function rightClick() {
+            if($(this).hasClass("num")){
+                return ;
+
+            }
+            if($(this).hasClass("fla")){
+                $(this).removeClass("fla");
+                flag++;
+            }else{
+                flag--;
+                if(flag<0){
+                    alert("失败");
+                    flag++;
+                    setTimeout(fail,500);
+                    startFlag=false;
+                    $(".lei").addClass("show");
+                    return;
+                }
+                $(this).addClass("fla");
+            }
+
+            if(flag==0){
+                if($(".fla").filter(".lei").length==$(".lei").length){
+                    clearInterval(tim);
+                    alert("恭喜！成功了！游戏结束！");
+                    if(bestScore.length < 3){
+                        var player=prompt("请输入名字：");
+                        bestScore.push({player,score:ms});
+                        bestScore.sort(function(a,b){
+                            var scoreA=parseInt(a.score);
+                            var scoreB=parseInt(b.score);
+                            if(scoreA>scoreB){
+                                return 1;
+                            }else{
+                                return -1;
+                            }
+                        })
+                    }else{
+                        if (ms <bestScore[2].score) {  //分数大于第三个  插入  删除最后一个
+                            var player = prompt("请输入姓名");
+                            bestScore.push({player, score: ms});
+                            bestScore.sort(function (a, b) {
+                                if (a.score > b.score) {
+                                    return 1;
+                                } else {
+                                    return -1;
+                                }
+                            });
+                            bestScore.pop();
+                        }
+                    }
+                    $(".mask").fadeIn(500);
+                    $(".score1").html(ms);
+                    $(".maxscore").html(bestScore[0].score);
+                    localStorage.bestScore=JSON.stringify(bestScore);
+                    $(".lei").removeClass("fla");
+                    flag=0;
+                }
+            }
+            $(".flag").html("还剩"+flag+"个雷")
+        }
+        if(startFlag){
+            tim=setInterval(piaomiao,1000);
+        }else{
+            clearInterval(tim);
+        }
+        var bestScore=localStorage.bestScore ? JSON.parse(localStorage.bestScore) : [];
+        function getData() {
+            return localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
+        }
+        function fail() {
+            $(".mask2").fadeIn(500);
+        }
+        function getPhb(){
+            var str="";
+            for(var i=0;i<bestScore.length;i++){
+                str+="<li><span>第"+(i+1)+"名："+bestScore[i].player+"</span><span>最高分："+bestScore[i].score+"</span></li>";
+            }
+            $("ul").html(str);
+        }
+        $(".paihang").hover(function () {
+            $("ul").slideDown(500);
+            getPhb();
+        },function () {
+            $("ul").slideUp(500);
+        });
+        $(".resta").click(function () {
+            tim=null;
+            clearInterval(tim);
+            restart();
+            $(".mask2,.mask").fadeOut(500);
+        });
+
+    })
+
+</script>
+</html>

@@ -1,0 +1,705 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打字游戏</title>
+</head>
+<style>
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .scene {
+        width: 100%;
+        height: 100%;
+        background: url('img/bg1.png') center center no-repeat;
+        background-size: 100%;
+        margin: 0 auto;
+    }
+
+    .main {
+        width: 100%;
+        height: 100%;
+        float: left;
+        position: relative;
+    }
+
+    .control {
+        width: 800px;
+        height: 100px;
+        /*background: #f2dede;*/
+        position: absolute;
+        top:0;
+        left:0;
+        right:0;
+        margin:auto;
+        z-index: 10;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .box {
+        width: 26%;
+        /*height: 100%;*/
+        background: url('img/scor.png') center center no-repeat;
+        background-size: 100%;
+        margin: 15px auto;
+        border-radius: 15px;
+        float: left;
+        position: relative;
+        z-index: 10;
+    }
+    .ll{
+       /* background: url('img/life.png') center center no-repeat;
+        background-size: 100%;*/
+        background: none;
+    }
+    .name {
+        width: 100%;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        color: #999;
+        font-family: "苹方";
+    }
+
+    .score, .state, .life {
+        width: 70%;
+        height: 50px;
+        float: right;
+        text-align: center;
+        line-height: 50px;
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: "苹方";
+    }
+    .life>img{
+        position: absolute;
+        z-index: 100;
+        right:-20px;
+    }
+    .lifetiao{
+        width: 200px;
+        height: 35px;
+        background: url('img/progress.png') center center no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        top:25px;
+        left:16px;
+        transition: all 0.2s;
+    }
+    .letter {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        text-align: center;
+        line-height: 60px;
+        border-radius: 10px;
+        /*transition: all 1s;*/
+        font-weight: bold;
+    }
+    .letter img{
+        width: 100%;
+        height: 100%;
+    }
+    .pause {
+        width: 20%;
+        height: 50px;
+        background: #d9ffc1;
+        margin: 15px auto;
+        border-radius: 15px;
+        cursor: pointer;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        float: left;
+    }
+    .pause{
+        width: 65px;
+        height: 65px;
+        background: url('img/stop.png') no-repeat center;
+        background-size: 100%;
+        float: right;
+        margin-right: 200px;
+    }
+    .scene2{
+        display: none;
+    }
+    .scene1{
+        width: 710px;
+        height: 400px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        animation: move 3s linear infinite;
+    }
+    @keyframes move{
+        0%{
+            transform:translateX(0);
+        }
+        25%{
+            transform:translateX(-30px);
+        }
+        50%{
+            transform:translateX(0px);
+        }
+        75%{
+            transform:translateX(30px);
+        }
+        100%{
+            transform:translateX(0);
+        }
+    }
+    .start:hover{
+        transform:scale(1.1);
+    }
+
+    .top {
+        width: 710px;
+        height: 250px;
+        background: url('img/logo.png') no-repeat center;
+    }
+    .bottom {
+        width: 710px;
+        height: 150px;
+    }
+    .choose {
+        width: 340px;
+        height: 100px;
+        float: left;
+        margin-top: 50px;
+        margin-right: 30px;
+        cursor: pointer;
+        background: url('img/choose.png') no-repeat center;
+        transition: all 1s;
+    }
+    .start {
+        width: 340px;
+        height: 100px;
+        float: left;
+        margin-top: 50px;
+        cursor: pointer;
+        background: url('img/start.png') no-repeat center;
+        transition: all 1s;
+    }
+    .scene3{
+        width: 839px;
+        height: 402px;
+        background: url('img/difficult.png') no-repeat;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: none;
+    }
+    ul,li{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    ul.paihang{
+        width: 700px;
+        height: 250px;
+        position: absolute;
+        left: 0;
+        top:110px;
+        right: 0;
+        bottom: 0;
+        margin:auto;
+    }
+    .paihang>li{
+        line-height: 80px;
+        text-align: center;
+        font-size: 25px;
+    }
+    .back {
+        width: 110px;
+        height: 110px;
+        background: url('img/quit.png');
+        position: absolute;
+        left:0;
+        right:0;
+        bottom: -60px;
+        margin: auto;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .mask,.mask2 {
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: none;
+        z-index: 99;
+    }
+    .stopbox {
+        width: 470px;
+        height: 220px;
+        background: url('img/stopbox.png');
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-around;
+    }
+    .continue {
+        width: 93px;
+        height: 93px;
+        background: url('img/continue.png');
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .stop-restart {
+        width: 93px;
+        height: 93px;
+        background: url('img/restart.png');
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .stop-quit {
+        width: 93px;
+        height: 93px;
+        background: url('img/quit.png');
+        background-size: 100% 100%;
+        margin-bottom: 30px;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .overbox {
+        width: 484px;
+        height: 419px;
+        background: url('img/over.png') no-repeat center;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        font-size: 25px;
+        font-weight: 300;
+        color: #000;
+    }
+    .score1 {
+        width: 100px;
+        height: 40px;
+        margin-left: 290px;
+        margin-top: 150px;
+        line-height: 40px;
+    }
+    .maxscore {
+        width: 100px;
+        height: 40px;
+        margin-left: 290px;
+        margin-top: 5px;
+        line-height: 40px;
+    }
+    .btns {
+        width: 250px;
+        height: 93px;
+        margin: 0 auto;
+        margin-top: 30px;
+    }
+    .restart {
+        width: 93px;
+        height: 93px;
+        background: url('img/restart.png');
+        float: left;
+        cursor: pointer;
+        transition: all 1s;
+    }
+    .quit {
+        width: 93px;
+        height: 93px;
+        background: url('img/quit.png');
+        float: right;
+        cursor: pointer;
+        background-size: 100% 100%;
+        transition: all 1s;
+    }
+</style>
+<body>
+<div class="scene">
+    <div class="scene1">
+        <div class="top"></div>
+        <div class="bottom">
+            <div class="choose"></div>
+            <div class="start"></div>
+        </div>
+    </div>
+    <div class="scene2">
+        <div class="pause"></div>
+        <div class="main">
+
+        </div>
+        <div class="control">
+            <div class="box">
+                <div class="name">得分：</div>
+                <div class="score">0</div>
+            </div>
+            <div class="box">
+                <div class="name">关卡：</div>
+                <div class="state">1</div>
+            </div>
+            <div class="box ll">
+                <div class="name">生命值：</div>
+                <div class="life">
+                    <img src="img/life.png" alt="" style="margin-top: -10px">
+                    <div class="lifetiao"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="scene3">
+        <ul class="paihang">
+            <li></li>
+        </ul>
+        <div class="back toback"></div>
+    </div>
+    <div class="mask2 ma">
+        <div class="stopbox">
+            <div class="continue"></div>
+            <a href=""><div class="stop-restart"></div></a>
+            <a href=""><div class="stop-quit qu"></div></a>
+        </div>
+    </div>
+    <div class="mask ma">
+        <div class="overbox">
+            <div class="score1"></div>
+            <div class="maxscore"></div>
+            <div class="btns">
+                <div class="restart"></div>
+                <a href=""><div class="quit qu"></div></a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    /*
+     var main=document.querySelector(".main");
+     var obj={};
+     var num=6;
+     function getLetter() {
+     var word=document.createElement("div");
+     word.className="letter";
+     do{
+     var asc=Math.floor(Math.random()*26+65) ;
+     var letter=String.fromCharCode(asc);
+     }while (obj[letter]);
+     obj[letter]=true;
+     word.innerHTML=letter;
+     do{
+     lefts=Math.random()*720;
+
+     }while(checkleft(lefts));
+     tops=-Math.random()*200;
+     word.style.left=lefts+"px";
+     word.style.top=tops+"px";
+     obj[letter]={left:lefts,top:tops,ele:word};
+     main.appendChild(word);
+     }
+     function play() {
+     for(var i=0;i<num;i++){
+     getLetter();
+     }
+     }
+     function checkleft(left) {
+     for(var i in obj){
+     if(obj[i].left<left+60&&left<obj[i].left+80){
+     return true;
+     }
+     }
+     }
+     console.log(obj)
+     play();
+     setInterval(function () {
+     for(var i in obj){
+     var t=obj[i].top;
+     t+=5;
+     obj[i].top=t;
+     obj[i].ele.style.top=t+"px";
+     }
+     },50);
+     document.onkeydown=function (e) {
+     var keycode=e.keyCode;
+     var le=String.fromCharCode(keycode);
+     if(obj[le]){
+     main.removeChild(obj[le].ele);
+     delete obj[le];
+     getLetter();
+     }
+     }
+     */
+    var chooseBtn=document.querySelector(".choose");
+    var paihangshow=document.querySelector(".paihang");
+    var startBtn=document.querySelector(".start");
+    var sc1=document.querySelector(".scene1");
+    var sc2=document.querySelector(".scene2");
+    var sc3=document.querySelector(".scene3");
+    var mask2=document.querySelector(".mask2");
+    var mask=document.querySelector(".mask");
+    var score1=document.querySelector(".score1");
+    var maxScore=document.querySelector(".maxscore");
+    var backto=document.querySelectorAll(".back");
+    Array.from(backto).forEach(function (v) {
+        v.onclick=function () {
+            sc1.style.display="block";
+            sc2.style.display="none";
+            sc3.style.display="none";
+        }
+    });
+
+    startBtn.addEventListener("click",function () {
+        sc1.style.display="none";
+        sc2.style.display="block";
+        sc3.style.display="none";
+    });
+    chooseBtn.onclick=function () {
+        sc1.style.display="none";
+        sc2.style.display="none";
+        sc3.style.display="block";
+    }
+    var main = document.querySelector(".main");
+    var sta = document.querySelector(".start");
+    var pau = document.querySelector(".pause");
+    var score = document.querySelector(".score");
+    var state = document.querySelector(".state");
+    var life = document.querySelector(".life");
+    var lifetiao=document.querySelector(".lifetiao");
+    class Game {
+        constructor(main, score, stat,life) {
+            this.main = main;
+            this.num = 3;
+            this.obj = {};
+            this.scoreEle = score;
+            this.sco = 0;
+            this.stateEle = stat;
+            this.statu = 1;
+            this.speed = 5;
+            this.startccontrol = true;
+            this.ting = null;
+            this.life=5;
+            this.lifeEle=life;
+            this.hei=window.innerHeight;
+            this.reWrite();
+            this.bestScore = localStorage.bestScore ? JSON.parse(localStorage.bestScore) : [];
+        }
+        getData(){
+            return localStorage.bestScore?JSON.parse(localStorage.bestScore):[];
+        }
+        reWrite(){
+            var data=this.getData();
+            var str="";
+            data.forEach(function (v,i) {
+                str+=`<li>第${i+1}名     玩家姓名：${v.player}        玩家得分${v.score}</li>`;
+            });
+            paihangshow.innerHTML=str;
+        }
+        start() {
+            for (var i = 0; i < this.num; i++) {
+                this._getLetter();
+            }
+            this._move();
+            this._keydown();
+        }
+
+        pause() {
+            clearInterval(this.ting);
+            document.onkeydown = null;
+        }
+
+        goon() {
+            this._move();
+            this._keydown();
+        }
+
+        _getLetter() {
+            var div = document.createElement("div");
+            div.className = "letter";
+            do {
+                var le = Math.floor(Math.random() * 26 + 65);
+                var letter = String.fromCharCode(le);
+            } while (this.obj[letter]);
+            this.obj[letter] = true;
+            div.innerHTML = "<img src='img/"+letter+".png'>";
+            do {
+                var lefts = Math.random() * 740;
+            } while (this._checkLeft(lefts));
+            var tops = -Math.random() * 200 - 20;
+            div.style.left = lefts + "px";
+            div.style.top = tops + "px";
+            this.obj[letter] = {left: lefts, top: tops, ele: div};
+            this.main.appendChild(div);
+        }
+
+        _checkLeft(left) {
+            for (var i in this.obj) {
+                if (left < this.obj[i].left + 60 && this.obj[i].left - 60 < left) {
+                    return true;
+                }
+            }
+        }
+        _move() {
+            this.ting = setInterval(function () {
+                for (var i in this.obj) {
+                    var t = this.obj[i].top;
+                    t += this.speed;
+                    this.obj[i].top = t;
+                    this.obj[i].ele.style.top = t + "px";
+                    if(t>this.hei){
+                        this.life--;
+                        lifetiao.style.width=(this.life)*30+40+"px";
+
+                        //this.lifeEle.innerHTML=this.life;
+                        this.main.removeChild(this.obj[i].ele);
+                        delete this.obj[i];
+                        this._getLetter();
+                    }
+                    if(this.life==0){
+                        this._gameover();
+                        return;
+                    }
+
+                }
+            }.bind(this), 50);
+        }
+
+        _gameover(){
+            if (this.bestScore.length < 3) {
+                var player = prompt("请输入姓名");
+                this.bestScore.push({player, score: this.sco});
+
+                this.bestScore.sort(function (a, b) {
+                    if (a.score > b.score) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+                });
+                localStorage.bestScore = JSON.stringify(this.bestScore);
+            }else if (this.sco > this.bestScore[2].score) {  //分数大于第三个  插入  删除最后一个
+                    var player = prompt("请输入姓名");
+                    this.bestScore.push({player, score: this.sco});
+                    this.bestScore.sort(function (a, b) {
+                        if (a.score > b.score) {
+                            return -1;
+                        } else {
+                            return 1;
+                        }
+                    });
+                    this.bestScore.pop();
+                    localStorage.bestScore = JSON.stringify(this.bestScore);
+                }
+                this.reWrite();
+            mask.style.display="block";
+//            /*alert(`游戏结束，您的成绩为${this.sco}`);
+            var data=this.getData();
+            var str1="";
+            str1+=data[0].score;
+            maxScore.innerHTML=str1;
+            score1.innerHTML=this.sco;
+            this.main.innerHTML="";
+            this.obj={};
+            this.speed=5;
+            this.sco=0;
+            this.scoreEle.innerHTML=0;
+            this.life=5;
+            //this.lifeEle.innerHTML=5;
+            lifetiao.style.width="";
+            this.statu =1;
+            this.stateEle.innerHTML=1;
+            this.startccontrol=true;
+            clearInterval(this.ting);
+        }
+        _keydown() {
+            document.onkeydown = function (e) {
+                var keycode = e.keyCode;
+                var l = String.fromCharCode(keycode);
+                if (this.obj[l]) {
+                    this.main.removeChild(this.obj[l].ele);
+                    delete this.obj[l];
+                    this._getLetter();
+                    this.sco++;
+                    this.scoreEle.innerHTML = this.sco;
+                    if (this.sco % 10 == 0) {
+                        this._upup();
+                    }
+                }
+            }.bind(this);
+        }
+
+        _upup() {
+            this.statu++;
+            this.stateEle.innerHTML = this.statu;
+            if (this.statu <= 4) {
+                this._getLetter();
+            } else {
+                this.speed += 5;
+                console.log(this.speed);
+            }
+        }
+    }
+    var game = new Game(main, score, state,life);
+    sta.onclick = function () {
+        if (game.startccontrol) {
+            game.start();
+            game.startccontrol = false;
+        }
+    };
+
+   /* var qu=document.querySelectorAll(".qu");
+    var ma=document.querySelectorAll(".ma");*/
+    var restart=document.querySelector(".restart");
+    var flag = true;
+    restart.onclick=function () {
+        mask.style.display="none";
+        game.start();
+        game.startccontrol = false;
+    }
+/*    Array.from(qu).forEach(function (v,i) {
+        v.onclick=function () {
+            ma[i].style.display="none";
+        }
+    });*/
+    var goon=document.querySelector(".continue");
+    goon.onclick=function () {
+        mask2.style.display="none";
+        game.goon();
+    }
+    pau.onclick = function () {
+/*        if (flag) {
+            //pau.innerHTML = "继续";
+/!*            pau.style.background="url('img/continue.png') no-repeat center";
+            pau.style.backgroundSize="100%";*!/
+            mask2.style.display="block";
+            game.pause();
+        } else {
+            //pau.innerHTML = "暂停";
+            pau.style.background="url('img/stop.png') no-repeat center";
+            pau.style.backgroundSize="100%";
+            game.goon();
+        }
+        flag = !flag;*/
+        mask2.style.display="block";
+        game.pause();
+    }
+</script>
+</html>

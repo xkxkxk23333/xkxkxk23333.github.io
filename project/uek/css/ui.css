@@ -1,0 +1,591 @@
+body{
+	font-size: 0.32rem;
+	color: #999;
+	background: #F5F6FA;
+}
+header ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding:0 0.4rem;
+    }
+header ul li{
+        width: 100%;
+        height: 100%;
+        float: left;
+        color: white;
+        font-size: 0.32rem;
+        text-align: center;
+        line-height: 0.89rem;
+    }
+header ul li a{
+        width: 20%;
+        height: 100%;
+        display: block;
+        float: left;
+    }
+header{
+    width: 100%;
+    height: 0.89rem;
+    background: #007BE3;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 1000;
+}
+header .logo{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/logo.png');
+    background-position: 40% center;
+    background-repeat: no-repeat;
+    background-size: 0.7rem;
+}
+header .logo h3{
+    font-size: 0.36rem;
+    line-height: 0.89rem;
+    float: left;
+    color: white;
+    margin-left: 47%;
+}
+.banner{
+	position: relative;
+    width: 100%;
+    height: 5rem;
+    background: url('../img/uibanner.png');
+    background-position:center center ;
+    background-repeat:  no-repeat;
+    background-size: 100%;
+    overflow: hidden;
+}
+.bannerC {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4.14rem;
+    background: url('../img/uibanners.png') ;
+    background-position:  center center;
+    background-repeat:  no-repeat;
+    background-size: 100%;
+}
+.content{
+	width: 100%;
+	position: relative;
+}
+.content1{
+	width: 100%;
+	height: 7.3rem;
+	padding: 0 0.24rem;
+}
+.content1 .content1-top{
+	width: 100%;
+	height: 1.7rem;
+	padding: 0.4rem 0;
+}
+.content1 .content1-top h2 {
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: #333;
+}
+.content1 .content1-top h2:last-child {
+    font-size: 0.3rem;
+    line-height: 0.3rem;
+}
+.content1-top h2 span {
+    font-weight: 400;
+}
+.content1-top .cc {
+    width: 2.7rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('../img/ui1lines.png');
+    background-position: center center ;
+    background-repeat:  no-repeat;
+    background-size: 100%;
+}
+.content1-bottom{
+	width: 100%;
+	height: 5.6rem;
+	padding: 0 0.11rem 0.2rem 0.11rem;
+}
+.content1-bottom ul{
+	width: 100%;
+	height: 50%;
+	display: flex;
+	justify-content: space-between;
+}
+.content1-bottom ul li{
+	float: left;
+	width: 2.1rem;
+	height: 2.5rem;
+}
+.content1-bottom ul li div{
+	width: 100%;
+    height: 1.1rem;
+    background: url('../img/fwtx1.png') center center no-repeat;
+    background-size: 100%;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 1.1rem;
+    font-weight: 600;
+    padding-left: 0.8rem;
+}
+.content1-bottom ul li p{
+	width: 2.1rem;
+    height: 1.4rem;
+    color: #333;
+    font-size: 0.26rem;
+    line-height: 0.32rem;
+    text-align: center;
+    padding-top: 0.2rem;
+    border: 1px dashed #f2a111;
+}
+.content2{
+	width: 100%;
+	height: 7.6rem;
+}
+.content2-top{
+	width: 100%;
+    height: 1.3rem;
+    margin: 0 auto;
+    padding: 0.4rem 0;
+    background: url('../img/uititle1.png') center center no-repeat;
+    background-size: 100%;
+    position: relative;
+    z-index: 20;
+}
+.content2-top h2 {
+    width: 100%;
+    height: 0.4rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.36rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.content2-top span{
+    font-weight: 500;
+}
+.content2-top .content2-m{
+	width: 2.7rem;
+    height: 0.1rem;
+    margin: 0 auto;
+    position: relative;
+    background: url('../img/ui2lines.png') center center no-repeat;
+    background-size: 100%;
+}
+.content2-bottom{
+	width: 100%;
+	padding: 0 0.24rem;
+}
+.content2-bottom-top{
+    width: 7.02rem;
+    height: 3.15rem;
+    border: 1px dashed #030000;
+    background: #f5f5f5;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.content2-bottom-top p span {
+    color: #00a8ff;
+    font-weight: 600;
+}
+.content2-bottom-top p {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    line-height: 0.36rem;
+    color: #333;
+    font-size: 0.26rem;
+    margin-top: 0.1rem;
+}
+.content2-bottom-bottom{
+	width: 100%;
+	height: 3.74rem;
+	background-image: url('../img/ui11s.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 10;
+}
+.content3{
+	margin-top: -0.26rem;
+    height: 13.7rem;
+    width: 100%;
+    background: #1B1D32;
+}
+.content3-main-top {
+    width: 2.46rem;
+    height: 0.8rem;
+    margin: 0 auto;
+    padding: 0.2rem;
+    text-align: center;
+    line-height: 0.4rem;
+    font-size: 0.3rem;
+    border-bottom: 1px dashed #fff;
+    position: relative;
+    color: #f5f5f5;
+}
+.content3-main-top .tiao{
+	width: 100%;
+    height: 1px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0.1rem;
+}
+.liebiao {
+    width: 7.02rem;
+    height: 4.17rem;
+    margin: 0 auto;
+    background: url('../img/bfb.png') ;
+    background-position:  center center;
+    background-repeat:  no-repeat;
+    background-size: 100%;
+    margin-top: 0.25rem;
+    position: relative;
+}
+.liebiao div {
+    height: 0.32rem;
+    position: absolute;
+    left: 1.1rem;
+}
+.orange {
+    top: 0.48rem;
+    background: #fff100;
+}
+.cyan {
+    top: 1.1rem;
+    background: #1dffbd;
+}
+.blue {
+    top: 1.71rem;
+    background: #0c51ff;
+}
+.lightblue {
+    top: 2.30rem;
+    background: #00a8ff;
+}
+.dont {
+    top: 2.96rem;
+    background: #1befe8;
+}
+.pjxx {
+    width: 7.02rem;
+    height: 4.8rem;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-top: 0.3rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.pjxx ul{
+	width: 3.41rem;
+	height: 100%;
+}
+.pjxx ul li{
+	width: 100%;
+	height: 2.21rem;
+	padding-top: 0.14rem;
+	margin-top: 0.19rem;
+	font-size: 0.24rem;
+	text-align: center;
+	overflow: hidden;
+    background: url('../img/ui2back.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    color: #fff;
+}
+.pjxx p {
+    font-size: 0.24rem;
+    line-height: 0.4rem;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    height: 1.67rem;
+    overflow: hidden;
+}
+.btn{
+	display: block;
+    width: 2.99rem;
+    height: 0.8rem;
+    margin: 0.4rem auto;
+    background: url('../img/btn.png');
+    background-position: center center;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    line-height: 0.8rem;
+    font-size: 0.28rem;
+}
+.content4{
+    margin-top: -0.6rem;
+    width: 100%;
+
+}
+.content4-bottom{
+    width: 100%;
+    padding: 0.4rem 0.24rem 0;
+/*     height: 4.9rem; */
+    margin: 0 auto;
+}
+.title-name p{
+    float: left;
+    flex-wrap:nowrap;
+    color: #fff;
+    font-size: 0.26rem;
+    line-height: 0.6rem;
+    height: 0.6rem;
+    border-radius: 0.1rem 0.1rem 0 0;
+    background: #40abfd;
+    overflow: hidden;
+    text-align: center;
+    width: 1.3rem;
+}
+.title-name p:nth-child(2) {
+    width: 1.8rem;
+    background: #219eff;
+}
+.title-name p:nth-child(3) {
+    width: 3.92rem;
+    background: #118ded;
+}
+.big-box li p {
+    height: 0.7rem;
+    overflow: hidden;
+    float: left;
+    font-size: 0.26rem;
+    color: #666;
+    line-height: 0.7rem;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.big-box li {
+    width: 100%;
+    height: 0.7rem;
+    overflow: hidden;
+}
+.big-box {
+/*     width: 100%;
+    height: 3.6rem; */
+    border: 1px solid #1875ff;
+    position: relative;
+    z-index: 20;
+    overflow: hidden;
+}
+.title-name {
+    width: 100%;
+    height: 0.6rem;
+}
+p.stu_name{
+    width: 1.3rem;
+}
+.big-box li p.ld-moneycolor {
+    color: #feaf34;
+    width: 1.8rem;
+}
+p.stu_welfare{
+    width:3.87rem;
+    float: left;
+}
+.content5 {
+    background: url('../img/ui4back.png') center center repeat;
+    background-size: 100%;
+}
+.con5 {
+    width: 7.02rem;
+    height: 16.2rem;
+    margin: 0 auto;
+}
+.content5-bottom ul {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 0.3rem;
+}
+.content5-bottom li {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 0.4rem;
+    margin-left: 100%;
+}
+.content5-bottom span {
+    display: block;
+    width: 100%;
+    height: auto;
+    color: #333;
+    overflow: hidden;
+    font-size: 0.3rem;
+    padding: 0.1rem 0.2rem;
+    margin-top: 0.2rem;
+    line-height: 0.32rem;
+}
+.content5-bottom p {
+    width: 100%;
+    height: auto;
+    padding: 0.2rem;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    border-top: 1px dashed #a0a0a0;
+    font-size: 0.26rem;
+    line-height: 0.36rem;
+    text-align: justify;
+    color: #666;
+    letter-spacing: 1px;
+    -moz-text-align-last: justify;
+    -webkit-text-align-last: justify;
+}
+.content6 {
+    margin-top: 0.5rem;
+}
+.content6-main{
+    padding: 0.5rem 0.24rem 0;
+    width: 100%;
+    height: auto;
+}
+.content6-main ul {
+    width: 100%;
+    height: 2.63rem;
+    overflow: hidden;
+    margin-top: 0.1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.content6-main ul.ui52 li{
+    width: 100%;
+    height: 100%;
+}
+.content6-main ul.ui51 li {
+    width: 3.46rem;
+    height: 2.63rem;
+    overflow: hidden;
+    float: left;
+}
+.content6-main ul.ui53 li {
+    width: 3.46rem;
+    height: 2.63rem;
+    overflow: hidden;
+    float: left;
+}
+.content7 p {
+    width: 100%;
+    height: 0.85rem;
+    font-size: 0.28rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.85rem;
+    font-weight: 600;
+}
+.box h5 {
+    display: none;
+}
+.box .content {
+    padding: 0 0.7rem 0;
+}
+form {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.table_form {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+}
+.table_form tr {
+    display: block;
+    width: 100%;
+    height: 1rem;
+    position: relative;
+    text-align: center;
+}
+.table_form tr td{
+    width: 4.2rem;
+    height: 100%;
+    padding-left: 0.1rem;
+
+}
+input.input-text {
+    float: left;
+    color: #333;
+    font-size: 0.3rem;
+    background: url('../img/input.png') center center no-repeat;
+    background-size: 100%;
+    outline: none;
+    border: 0;
+    width: 4.0rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-indent: 1em;
+    margin-top: 0.4rem;
+}
+.table_form tr th {
+    width: 1.2rem;
+    height: 0.6rem;
+    display: block;
+    color: #333;
+    font-size: 0.3rem;
+    line-height: 0.5rem;
+    float: left;
+    margin-top: 0.4rem;
+    border: 0;
+    padding: 4px 0 4px 8px;
+    font-weight: 500;
+}
+form select {
+    float: left;
+    color: #333;
+    font-size: 0.3rem;
+    background: url('../img/input.png') center center no-repeat;
+    background-size: 100%;
+    border: none;
+    outline: none;
+    width: 4.0rem;
+    height: 0.6rem;
+    line-height: 0.6rem;
+    text-indent: 1em;
+    margin-top: 0.4rem;
+    vertical-align: middle;
+    padding: 0.04rem;
+}
+.submit input {
+    display: block;
+    width: 2.99rem;
+    height: 0.8rem;
+    color: #fff;
+    background: url('../img/btn.png') center center no-repeat;
+    background-size: 100%;
+    text-align: center;
+    line-height: 0.8rem;
+    outline: none;
+    border: none;
+    font-size: 0.3rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.tea_copyright{
+    font-size: 0.2rem;
+    color: #c666;
+    text-align: center;
+    margin: 0.4rem 0 0.2rem 0;
+}
+.bottom {
+    width: 100%;
+    height: 0.8rem;
+}

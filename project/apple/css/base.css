@@ -1,0 +1,16 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	/* 去除a标签下划线 */
+	box-sizing: border-box;
+	
+
+}
+ul,li,ol{
+	list-style:none;
+}
+a{
+	color: #808080;
+}
+	/* }去除默认样式 */

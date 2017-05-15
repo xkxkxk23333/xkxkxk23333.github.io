@@ -1,0 +1,16 @@
+*{
+
+	margin: 0;
+	padding: 0;
+	/* text-decoration: none; *//* 去除a标签下划线 */
+	box-sizing:  border-box;
+	list-style: none;  /*  群组选择器 */
+   transition:all 0.3s linear;
+
+  -webkit-transition:all 0.3s linear;
+ /*  <!-- chrome /safari --> */
+  -moz-transition:all 0.3s linear;
+ /*   <!-- ff --> */
+  -0-transition:all 0.3s linear;
+  /* <!-- poera --> */
+}

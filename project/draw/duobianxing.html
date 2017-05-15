@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas{
+            background: #ccc;
+            display: block;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500px" height="500px">
+
+</canvas>
+</body>
+<script>
+    var canvas=document.querySelector("canvas");
+    var cobj=canvas.getContext("2d");
+    function deg(d) {
+        return d/180*Math.PI;
+    }
+    var r=100;
+    cobj.translate(250,250);
+//    cobj.beginPath();
+//    cobj.arc(0,0,r,0,deg(360));
+//    cobj.stroke();
+
+    cobj.rotate(deg(90));
+    function poly(side,style) {
+        cobj.save();
+        var angle=deg(180/side);
+        var x=Math.cos(angle)*r;
+        var y=Math.sin(angle)*r;
+        cobj.moveTo(x,y);
+        for(var i=0;i<side;i++){
+
+            cobj.lineTo(x,-y);
+            cobj.rotate(-angle*2);
+        }
+        cobj[style]();
+        cobj.restore();
+    }
+    poly(5,"fill")
+</script>
+</html>

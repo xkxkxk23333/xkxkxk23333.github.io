@@ -1,0 +1,155 @@
+.denglutop{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.denglutop-main{
+	position: relative;
+	width: 100%;
+	height: 0.84rem;
+	/* background:#f7f7f8; */
+	linear-gradient(#F1F1F1, #E8E8E8);
+	padding: 0.06rem 0;
+	border-bottom:0.02rem solid #c8c8c8;
+}
+.fanhuikuang{
+	width: 1rem;
+	height: 0.5rem;
+	border-radius: 0.1rem;
+	padding: 0.08rem 0.2rem;
+	border: 0.02rem solid #c8c8c8;
+	background: #e6e6e6;
+	position: absolute;
+	top: 0.15rem;
+	left: 0.2rem;
+	margin: auto;
+
+}
+.fanhui{
+	color: #888;
+	font-size: 0.24rem;
+	text-align: center;
+}
+.dengluzi{
+	text-align: center;
+    font-size: 0.4rem;
+    color: #333;
+    line-height: 0.7rem;
+}
+
+.login{
+	width: 100%;
+	height: auto;
+	
+}
+.loginmain{
+	width: 100%;
+	/* margin-top: 0.35rem; */
+	overflow: hidden;
+}
+.loginmain ul{
+	overflow: hidden;
+	background: #fff;
+	position: relative;
+	width: 100%;
+	height: 0.84rem;
+	padding: 0.08rem 0.2rem;
+	border-bottom:0.02rem solid #ddd;
+}
+.loginmain ul li .login-left1{
+	float: left;
+    color: #333;
+    text-align: left;
+    font-size:0.28rem;
+    line-height: 0.7rem;
+}
+.loginmain ul li .login-left{
+	float: left;
+    color: #333;
+    text-align: left;
+    font-size:0.28rem;
+    line-height: 0.7rem;
+
+}
+.loginmain ul li .login-right{
+    position: absolute;
+    right: 2rem;
+    left: 3rem;
+    margin: auto;
+    color: #333;
+    float: left;
+	 font-size:0.28rem;
+	line-height: 0.7rem;
+}
+.jiantou{
+	float: right;
+	font-size: 0.24rem;
+	color: #ccc;
+	font-weight: 600;
+	line-height: 0.7rem;
+}
+.denglukuang{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.36rem;
+	margin-right: 0.1rem;
+
+	/* margin-left: 0.2rem; */
+}
+.denglukuang-main{
+	width: 7rem;
+	height: 1.04rem;
+	border-radius: 0.1rem;
+	background: #DDDDDD;
+	margin: 0 auto;
+	border:0.02rem solid #cfcfcf;
+
+}
+.denglu-left{
+	width: 1.04rem;
+	height: 1.02rem;
+	background: #fff;
+	float: left;
+	border-bottom:0.02rem solid #cfcfcf;
+
+}
+.shuangjiantou{
+	text-align: center;
+	color: #ccc;
+	font-weight: 600;
+	font-size: 0.6rem;
+	margin-top: 0.15rem;
+}
+.denglukuang-zi{
+    font-size: 0.28rem;
+    text-align: center;
+    line-height: 1.04rem;
+    color: #333;
+}
+.content4{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.1rem;
+	margin-right: 0.1rem; 
+}
+.content4zi{
+	width: 7rem;
+	height: 0.38rem;
+	margin: 0 auto;
+
+}
+.mianfei{	
+	color: #333;
+	font-size: 0.28rem;
+	float: left;
+	text-align: center;
+	line-height: 0.38rem;
+}
+.kong{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	background: #f0f0f0;
+}

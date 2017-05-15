@@ -1,0 +1,577 @@
+.header{
+	width: 100%;
+	height: 32px;
+	border-bottom: 1px solid #CCCCCC;
+	background: #f7f7f7;
+	font-size: 12px;
+	color: #808080;
+	line-height: 32px;
+
+}
+.header a:hover{
+	color: red;
+}
+.header-main{
+	width: 1200px;
+	height: 100%;
+	margin: 0 auto;/* 块元素居中 */
+}
+.header-right{
+	width: 432px;
+	height: 100%;
+	float: right;
+}
+.welcome{
+	float: left;
+}
+.denglu{
+	width: 77px;
+	height: 100%;
+	float: left;
+	margin-left: 20px;
+}
+.login{
+	float: left;
+}
+.fenge{
+	float: left;
+	margin-left: 11.5px;
+}
+.regist{
+	float: right;
+}
+.order{
+	float: left;
+	margin-left: 14px;
+}
+.news{
+	width: 72px;
+	height: 100%;
+	float: left;
+	margin-left: 16px;
+}
+img.new{
+	width: 16px;
+
+	margin: 0 auto;
+	float: left;
+	margin-top: 7px;
+}
+.webnews{
+	float: right;
+}
+.dian1{
+	width: 100px;
+	margin: 0 auto;
+	position: relative;
+	top: 476px;
+}
+
+.dian1 div{
+	width: 11px;
+	height: 11px;
+	border-radius: 50%;
+	background: #DDDDDD;
+	float: left;
+	margin-right: 5px;
+	position: relative;
+	z-index: 1000;
+	
+}
+.dian1 .dian2{
+	background: red;
+}
+
+.img{
+	width: 38px;
+	height: 100%;
+	float: right;
+	margin-top: 6px;
+}
+.laba{
+	margin-top: 5px;
+	width: 18px;
+	height: 20px;
+	position:absolute ;
+	background-image: url('../img/notice.png');
+}
+.wei{
+	width: 18px;
+	height: 18px;
+	float: left;
+	background-image: url('../img/w1.jpg');
+	position: relative;
+}
+.wei .weixintu{
+	width: 150px;
+	height: 170px;
+	position: absolute;
+	right:0;
+	top:28px;
+	border:1px solid #ccc;
+	background: #fff;
+	display: none;
+	z-index: 300;
+}
+input.wenben{
+	height: 29px;
+	width:260px;
+	color: #000;
+	border-radius: 2px;
+	border:1px solid #ccc;
+}
+input.wenben:hover{
+	outline: solid 1px #0AA6E8;
+	box-shadow: 1px 1px 3px 1px rgba(10, 166, 232, 0.33);
+}
+.wei img{
+	position: absolute;
+	left:0;
+	top:0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+}
+.we{
+	width: 18px;
+	height: 18px;
+	float: right;
+	background-image: url('../img/w2.jpg');
+}
+.sousuo{
+	width: 1200px;
+	height: 78px;
+	font-size: 12px;
+	color: #808080;
+	margin: 0 auto;
+	float: top;
+	margin-top: 0px;
+	/*overflow: hidden;*/
+}
+.ban img{
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right:0;
+	margin:auto;
+	transition: all 1s linear;
+	opacity: 0;
+}
+.ban img:first-child{
+	opacity: 1;
+}
+.sou{
+	width: 438px;
+	height: 29px;
+	float: right;
+	margin-top: 30px;	
+}
+.gouwu{
+	width: 106px;
+	height: 29px;
+	float: right;
+	margin-right: 0px;
+	background-image: url('../img/vanclsprite.png');
+	background-position: -154px 0px;
+	position: relative;
+}
+.gouwu span{
+	display: inline-block;
+	color: white;
+	text-align: center;
+	line-height: 29px;
+	padding-left: 30px;
+	position: absolute;
+	width: 100%;
+	height:100%;
+	top:0;
+	left:0;
+	z-index: 200;
+	cursor: pointer;
+}
+.gouwuhid{
+	width: 315px;
+	height: auto;
+	padding: 5px;
+	border: 1px solid #b81c22;
+	position: absolute;
+	right: 0;
+	top: 28px;
+	background: #fff;
+	/*z-index: 100;*/
+	display: none;
+}
+.gouwu:hover .gouwuspan{
+	color:#b71c22;
+	background-image: url('../img/vanclsprite.png');
+	border:1px solid #b71c22;
+	border-bottom: none;
+	background-position: -154px -29px;
+	/*background: white;*/
+}
+.wenzi{
+	clear: both;
+	float: right;
+	margin-top: 6px;
+}
+.wenzi div{
+	padding: 0px 5px;
+	float: right;
+}
+.wenzi a:hover{
+	color: red;
+}
+.zi a:hover{
+	color: red;
+}
+.daohang{
+	width: 1200px;
+	height: 43px;
+	font-size: 15px;
+	color: #727171;
+	margin: 0 auto;
+
+}
+.tu{
+	width: 10px;
+	height: 20px;
+	float: left;
+	margin-left: 0px;
+
+}
+.zi{
+	margin-top: 28px;
+	float: right;
+/*	overflow: hidden*/;
+}
+.zi div{
+	width: 99px;
+	line-height: 22px;
+	font-size: 16px;
+	float: left;
+	position:relative ;
+	text-align: center;
+}
+.zi div .scroll{
+	width:100%;
+	height: 0;
+	background:#fff;
+	position: absolute;
+	top:20px;
+	z-index: 1000;
+	overflow: hidden;
+	transition: all 0.8s;
+}
+.zi .scroll ul{
+	width: 100%;
+	height: auto;
+
+	text-align: center;
+	border: 1px solid #efefef;
+	border-top: 0;
+	padding: 10px 0px;
+}
+.scroll ul li {
+	text-align: center;
+	line-height: 35px;
+	background: none;
+	padding: 0;
+	float: none;
+	font-size: 16px;
+}
+.redline{
+	display: block;
+	width: 100%;
+	height: 20px;
+	border-bottom: 5px solid #b81c22 ;
+	position: relative;
+	z-index: 100;
+}
+.zi .bc{
+	border-right: 1px solid #888888;
+}
+.banner{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 36px;
+	position: relative;
+}
+.banners{
+	width: 1200px;
+	height: 535px;
+	margin: 0 auto;
+	margin-top: 36px;
+	position: relative;
+}
+.ba{
+	width: 100%;
+	height: 100%;
+	
+}
+.banner-zuo{
+	top: 230px;
+	left: 50px;
+	position:absolute;
+	z-index: 500;
+	cursor: pointer;
+}
+.banner-you{
+	top: 230px;
+	right: 50px;
+	position:absolute;
+	z-index: 500;
+	cursor: pointer;
+}
+
+.xinpin{
+	width: 1200px;
+	font-size: 17px;
+	color: #9a9a9a;
+	margin: 0 auto;
+}
+.sp{
+	text-align: center;
+	margin-top: 68px;
+	margin-bottom: 47px;
+}
+.shangpin{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+ .zuo1{
+	float: left;
+	margin-right: 15px;
+}
+.you1{
+	float: right;
+}
+.xhg{
+	width: 1200px;
+	height: 100%;
+	font-size: 17px;
+	color: #9a9a9a;
+	margin: 0 auto;
+	overflow: hidden;
+}
+.ho{
+	text-align: center;
+	margin-top: 63px;
+}
+.hg{
+	width: 1200px;
+	height: 509px;
+	margin: 0 auto;
+	margin-top: 45px;
+}
+.zuoh{
+	width: 590px;
+	height: 511px;
+	float: left;
+}
+.zuoh-top{
+	width: 590px;
+	height: 440px;
+	float: left;
+}
+.zuoh-top{
+	width: 590px;
+	height: 440px;
+	float: right;
+}
+.zuoh-bottom{
+	width: 590px;
+	height: 69px;
+	float: left;
+	margin-top: 0px;
+	font-size: 13px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+
+.zhongh-bottom-zi{
+	width: 290px;
+	height: 69px;
+	float: left;
+	margin-top: -3px;
+	font-size: 10px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.zuoh-bottom-zuo{
+	color: #333374;
+	float: left;
+	margin-top: 29px;
+	margin-left: 13px;
+}
+.zuoh-bottom-you{
+	color: #bf2f00;
+	float: right;
+	margin-top: 29px;
+	margin-right: 13px;
+}
+.youh-bottom{
+	width: 286px;
+	height: 69px;
+	float: left;
+	margin-top: -3px;
+	font-size: 13px;
+	border-left: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+.youh-bottom-zuo{
+	color: #333374;
+	float: left;
+	margin-top: 29px;
+	margin-left: 13px;
+}
+.youh-bottom-you{
+	color: #bf2f00;
+	float: right;
+	margin-top: 29px;
+	margin-right: 13px;
+}
+.zhongh{
+	width: 290px;
+	height: 509px;
+	float: left;
+	margin-left: 18px;
+	overflow: hidden;
+}
+.zhongh-top{
+	width: 290px;
+	height: 249px;
+	float: left;
+}
+.zhongh-bottom{
+	width: 590px;
+	height: 100%;
+	float: left;
+	margin-top: 16px;
+}
+.zhongh .zs{
+	float: top;
+}
+.zhongh .zx{
+	float: top;
+}
+.youh{
+	float: right;
+}
+/* .bottom1{
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	color: #ffffff;
+	border: 1px solid #e0e0e1;
+	margin-top: 48px;
+	background: black;
+}
+.bottom1a{
+ 
+}
+*/
+*.tupian2{
+	margin:0 auto;
+	float: left;
+}
+.content2{
+	width: 1200px;
+	height: 300px;
+	margin:0 auto;
+	border: 1px solid #e0e0e1;
+	margin-top: 48px;
+	overflow: hidden;
+}
+.on{
+	height: 166px;
+	float: left;
+	margin-top: 20px;
+	padding:20px 90px 0px 90px; 
+	border-right: 1px solid #e0e0e1;	
+}
+.sev{
+	height: 166px;
+	float: left;
+	margin-top: 20px;
+	padding:20px 90px 0px 90px; 
+	border-right: 1px solid #e0e0e1;	
+}
+.saoyisao{
+
+	float: right;
+	padding: 30px 90px 30px;
+	border-right: 100px;
+}
+.zi1{
+	color: #323232;
+	float: right;
+	background: #f8f8f8;
+	padding: 10px;
+	margin-right: 5px;
+}
+.zi1 div{
+	float:right;
+	padding-right: 67px;
+
+}
+.zi1 .b{
+	border-right: 1px solid #e0e0e1;
+	margin-right: 33px;
+	margin-left: 33px;
+}
+.last{
+	width: 1200px;
+	height: 47px;
+	margin:0 auto;
+	background: #f8f8f8;
+	
+	margin-top: 726px;
+
+}
+.wnzi{
+	width: 1200px;
+	font-size: 11px;
+		margin:0 auto;
+	border-top: 1px solid #30353b;
+	text-align: center;
+	margin-top: 48px;
+	padding-top: 10px;
+	float: bottom;
+}
+.wnzi2{
+	width: 1200px;
+	font-size: 11px;
+		margin:0 auto;
+	text-align: center;
+	margin-top: 10px;
+	padding-bottom: 10px;
+	float: bottom;
+}
+.weiba{
+	width: 1200px;
+	margin:0 auto;
+	margin-top: 20px;
+	margin-left: 270px;
+}
+.weiba img{
+	float:left;
+	margin-left: 20px;
+}
+.guding{
+	position:fixed;
+	bottom: 20px;
+	left: 50%;
+	margin-left: 600px;
+}
+.totop{
+	position: absolute;
+	bottom: 0;
+	width: 75px;
+	height: 60px;
+	cursor: pointer;
+}

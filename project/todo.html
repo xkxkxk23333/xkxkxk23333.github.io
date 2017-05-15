@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html{
+            width: 100%;
+            height: 100%;
+        }
+        *{
+            margin:0;
+            list-style: none;
+
+        }
+        ul li{
+            margin:0;
+            padding: 0;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .title{
+            width: 100%;
+            height: 100px;
+            background: skyblue;
+
+            font-size: 30px;
+            line-height: 100px;
+            font-weight: 400;
+            font-family: "SF Pro SC", "SF Pro Text", "SF Pro Icons", "PingFang SC", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+        }
+        div.inputArea{
+            height: auto;
+        }
+        .inputArea #text{
+            width: 200px;
+            height: 50px;
+            float: left;
+        }
+        .inputArea .sub{
+            width: 100px;
+            height: 56px;
+            float: left;
+            background: lightsalmon;
+            border:none;
+            outline: none;
+        }
+        div.show{
+            width: 100%;
+            flex-grow: 1;
+            background: #ffd2db;
+        }
+        .show ul{
+            float: left;
+            width: 50%;
+            padding: 0;
+            line-height: 30px;
+        }
+        .show ul li{
+            height: 30px;
+            line-height: 30px;
+            border-bottom:1px dashed;
+        }
+        .show ul li span{
+            display: block;
+            float: left;
+            margin-right: 300px;
+        }
+        time{
+            float: right;
+            background: #daff6a;
+            padding:0 10px;
+        }
+        ul.plan{
+            background: darkturquoise;
+        }
+        ul.done{
+           background: #8e89d1;
+        }
+        .check{
+            width: 30px;
+            height: 30px;
+            margin: 0;
+            padding: 0;
+            float: left;
+        }
+        div.line{
+            width: 100%;
+            height: 30px;
+            background: chartreuse;
+        }
+        div.no{
+            background: #ccc;
+        }
+        div.no,div.yes{
+            width:50%;
+            float: left;
+            line-height: 30px;
+            text-align: center;
+        }
+        ul.done{
+           float: right;
+        }
+    </style>
+</head>
+
+<body>
+<div class="title"> To Do Lists</div>
+<div class="inputArea">
+    <input type="text" id="text">
+    <input type="button" value="submit" class="sub">
+</div>
+<div class="show">
+    <div class="line">
+        <div class="no">未完成</div>
+        <div class="yes">已完成</div>
+    </div>
+    <ul class="plan">
+        <li>
+            <input type="checkbox" class="check">
+            <span>21301249193048139</span>
+            <time>2017/05/03 15:33</time>
+        </li>
+    </ul>
+    <ul class="done">
+        <li>
+            <input type="checkbox" class="check">
+            <span>21301249193048139</span>
+            <time>2017/05/03 15:33</time>
+        </li>
+    </ul>
+</div>
+<script>
+    var plan=document.querySelector(".plan");
+    var done=document.querySelector(".done");
+    var content=document.querySelector("#text");
+    var sub=document.querySelector(".sub");
+    function getData() {
+        return localStorage.todo?JSON.parse(localStorage.todo):[];
+    }
+    function saveData(data) {
+        if(!data){
+            return;
+        }
+        localStorage.todo=JSON.stringify(data)
+    }
+    function time(t) {
+        var date=new Date();
+        date.setTime(t);
+        return date.getFullYear()+"/"+((date.getMonth()+1)<10?("0"+(date.getMonth()+1)):(date.getMonth()+1))+"/"+((date.getDate())<10?("0"+(date.getDate())):(date.getDate()))+" "+((date.getHours())<10?("0"+(date.getHours())):(date.getHours()))+":"+((date.getMinutes())<10?("0"+(date.getMinutes())):(date.getMinutes()))+":"+((date.getSeconds())<10?("0"+(date.getSeconds())):(date.getSeconds()));
+    }
+    function rewrite() {
+        var data=getData();
+        var str1="";
+        var str2="";
+        data.forEach(function (v,i) {
+            if(v.done==false){
+                str1+=`<li id="${i}"><input type="checkbox" class="check" onfocus="changeState(this)"><span contenteditable="true" onblur="changeContent(this)">${v.content}</span><time>${time(v.time)}</time></li>`;
+            }else if(v.done==true){
+                str2+=`<li id="${i}"><input type="checkbox" class="check" onfocus="del(this)"><span>${v.content}</span><time>${time(v.time)}</time></li>`;
+            }
+        })
+        plan.innerHTML=str1;
+        done.innerHTML=str2;
+    }
+    rewrite();
+    function changeState(ele) {
+        var data=getData();
+        var index=ele.parentNode.id;
+        data[index].done=true;
+        saveData(data);
+        rewrite();
+    }
+    function del(ele) {
+        var data=getData();
+        var index=ele.parentNode.id;
+        data.splice(index,1);
+        saveData(data);
+        rewrite();
+    }
+
+    function changeContent(ele) {
+        var data=getData();
+        var index=ele.parentNode.id;
+        var val=ele.innerHTML;
+        data[index].content=val;
+        saveData(data);
+        rewrite();
+    }
+    sub.onclick=function () {
+        var data=getData();
+        var cont=content.value;
+        if(!cont){
+            return;
+        }
+        content.value="";
+        var time=(new Date()).getTime();
+        data.push({content:cont,time:time,done:false});
+        saveData(data);
+        rewrite();
+    }
+</script>
+</body>
+</html>

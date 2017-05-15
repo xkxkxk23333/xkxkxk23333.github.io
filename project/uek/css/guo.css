@@ -1,0 +1,379 @@
+body{
+	font-size: 0.32rem;
+	color: #999;
+	background: #F5F6FA;
+}
+header ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding:0 0.4rem;
+    }
+header ul li{
+        width: 100%;
+        height: 100%;
+        float: left;
+        color: white;
+        font-size: 0.32rem;
+        text-align: center;
+        line-height: 0.89rem;
+    }
+header ul li a{
+        width: 20%;
+        height: 100%;
+        display: block;
+        float: left;
+    }
+header{
+    width: 100%;
+    height: 0.89rem;
+    background: #007BE3;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 1000;
+}
+header .logo{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/logo.png');
+    background-position: 40% center;
+    background-repeat: no-repeat;
+    background-size: 0.7rem;
+}
+header .logo h3{
+    font-size: 0.36rem;
+    line-height: 0.89rem;
+    float: left;
+    color: white;
+    margin-left: 47%;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 4.21rem;
+    background: url('../img/banner_02.png');
+    background-position:center center ;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.tea_copyright{
+    font-size: 0.2rem;
+    color: #c666;
+    text-align: center;
+    margin: 0.4rem 0 0.2rem 0;
+}
+.lunbo{
+	width: 100%;
+	height: 0.08rem;
+
+	position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.lunbo li{
+	width: 25%;
+	height: 100%;
+
+}
+.lunbo :nth-child(1){
+	background: #ff8d12;
+}
+/* .lunbo li :hover{
+	background: #ff8d12;
+} */
+.bottom {
+    width: 100%;
+    height: 0.8rem;
+
+}
+.main{	
+	padding: 0.1rem 0.24rem 0;
+}
+.yema{
+	width: 100%;
+	height: auto;
+    background: white;
+}
+.yemas{
+	width: 100%;
+	height: 0.7rem;
+    padding-top: 0.2rem;
+}
+.yemas a {
+	display: block;
+    float: left;
+    padding: 0.1rem;
+    height: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.3rem;
+    margin-right: 0.15rem;
+}
+.yemas a:nth-child(1) {
+    width: 0.5rem;
+    margin-left: 0.3rem;
+    background: url('../img/s1.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(2) {
+    width: 1.48rem;
+    background: url('../img/s2.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a.a1 {
+    border: 1px solid #666;
+    letter-spacing: 1px;
+    color: #666;
+    width: 1.4rem;
+}
+.yemas a:nth-child(4) {
+    width: 1.48rem;
+    background: url('../img/s3.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(5) {
+    width: 0.5rem;
+    background: url('../img/s4.png') 0 0 no-repeat;
+    background-size: 100%;
+    margin-right: 0;
+}
+.weizhi{
+	width: 100%;
+	height: 0.63rem;
+	line-height: 0.63rem;
+    color: #494747;
+    font-size: 0.22rem;
+    font-weight: bold;
+}
+.weizhi .mulua{
+    display: block;
+    float: right;
+    margin-right: 3.8rem;
+    width:1rem;
+    height:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ul.content li{
+    margin-top: 0.2rem;
+    height: 2.87rem;
+    background: white;
+    padding: 0.2rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.tab{
+    width: 100%;
+    height: 0.8rem;
+    border: 1px solid #01b5ff;
+    border-radius: 0.07rem;
+    box-sizing: border-box;
+}
+.tab ul{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tab ul li{
+/*     width: 33.333333%; */
+    height: 100%;
+    line-height: 0.8rem;
+    border-radius: 0.07rem;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+.tab a{
+    display: block;
+    width: 33.333333%;
+    float: left;
+}
+.caret{
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border: 0.2rem solid;
+    border-top-color: #01b5ff;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    top: 0.74rem;
+    left: 50%;
+    margin-left: -0.1rem;
+}
+.zhuyao{
+    width: 100%;
+    height: auto;
+    background: white; 
+    margin-top: 0.2rem;
+    padding: 0.1rem 0.24rem 0 0.24rem ;
+}
+.overview {
+  width: 100%;
+  height: 4.08rem;
+  background-color: #fff;
+  margin-bottom: 0.2rem;
+  padding-right: 0.2rem;
+  padding-bottom: 0.3rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.overview .shu {
+  width: 0.04rem;
+  height: 0.2rem;
+  background: #01b5ff;
+  display: inline-block;
+  float: left;
+  margin-left: 0;
+  margin-top: 0.07rem;
+  overflow: hidden;
+}
+
+.overview h2 {
+  font-size: 0.28rem;
+  color: #333;
+  margin-left: 0.2rem;
+  margin-bottom: 0.13rem;
+  font-weight: normal;
+}
+
+.overview .line {
+  width: 100%;
+  height: 0;
+  border-bottom: 0.01rem dashed #666666;
+}
+
+.overview div.part {
+  width: 100%;
+  margin-top: 0.3rem;
+  overflow: hidden;
+}
+
+.overview div.part .img {
+  width: 2.81rem;
+  height: 2.81rem;
+  border-radius: 0.08rem;
+  overflow: hidden;
+  float: left;
+}
+
+.overview div.part .img img {
+  width: 100%;
+  height:100%;
+}
+
+.overview div.part .intro {
+  width: 2.9rem;
+  float: left;
+  height: 2.4rem;
+  box-sizing: border-box;
+  margin-top:0.16rem;
+    margin-left: 0.26rem;
+}
+
+.overview div.part .intro .name {
+  font-size: 0.28rem;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 0.05rem;
+  border-bottom:1px dashed #666;
+  height:0.5rem;
+}
+
+.overview div.part .intro .name span {
+  font-size: 0.22rem;
+  color: #01b5ff;
+}
+  
+ .overview div.part .intro .position {
+    font-size: 0.24rem;
+    color: #01b5ff;
+    margin-bottom: 0.3rem;
+}
+
+.overview div.part .intro .profession {
+  font-size: 0.24rem;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 0.15rem;
+  width:100%;
+  height:0.3rem;
+  text-align: left;
+}
+.overview div.part .intro .skill {
+  height:0.6rem;
+}
+.overview div.part .intro .profession p {
+  font-weight: normal;
+  width:0.9rem;
+  height:100%;
+  float:left;
+  margin-left: 0;
+  background-color: transparent;
+  color:#333;
+  margin-top:-0.1rem;
+  font-size:0.24rem;
+}
+.overview div.part .intro .profession span {
+  font-weight: normal;
+  width:2rem;
+  height:100%;
+    margin-top:-0.04rem;
+  float:left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.Introduction {
+  width: 100%;
+  background-color: #fff;
+  padding-left: 0.2rem;
+  padding-top: 0.16rem;
+  padding-right: 0.2rem;
+  padding-bottom: 0.3rem;
+  box-sizing: border-box;
+}
+
+.Introduction .shu {
+  width: 0.04rem;
+  height: 0.2rem;
+  background: #01b5ff;
+  display: inline-block;
+  float: left;
+  margin-left: -0.2rem;
+  margin-top: 0.07rem;
+  overflow: hidden;
+}
+
+.Introduction h2 {
+  font-size: 0.28rem;
+  color: #444;
+  margin-bottom: 0.13rem;
+  font-weight: normal;
+}
+
+.Introduction .line {
+  width: 100%;
+  height: 0.01rem;
+  border-bottom: 0.01rem dashed #666666;
+}
+
+.Introduction p {
+  font-size: 0.24rem;
+  color: #666666;
+  line-height: 0.4rem;
+  margin: 0.26rem 0;
+  word-break:break-all;
+  word-wrap: break-word;
+}

@@ -1,0 +1,331 @@
+body{
+    font-size: 0.32rem;
+    color: #999;
+    background: #F5F6FA;
+}
+header ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding:0 0.4rem;
+    }
+header ul li{
+        width: 100%;
+        height: 100%;
+        float: left;
+        color: white;
+        font-size: 0.32rem;
+        text-align: center;
+        line-height: 0.89rem;
+    }
+header ul li a{
+        width: 20%;
+        height: 100%;
+        display: block;
+        float: left;
+    }
+header{
+    width: 100%;
+    height: 0.89rem;
+    background: #007BE3;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 1000;
+}
+header .logo{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/logo.png');
+    background-position: 40% center;
+    background-repeat: no-repeat;
+    background-size: 0.7rem;
+}
+header .logo h3{
+    font-size: 0.36rem;
+    line-height: 0.89rem;
+    float: left;
+    color: white;
+    margin-left: 47%;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 4.21rem;
+    background: url('../img/banner_02.png');
+    background-position:center center ;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.tea_copyright{
+    font-size: 0.2rem;
+    color: #c666;
+    text-align: center;
+    margin: 0.4rem 0 0.2rem 0;
+}
+.lunbo{
+    width: 100%;
+    height: 0.08rem;
+
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.lunbo li{
+    width: 25%;
+    height: 100%;
+
+}
+.lunbo :nth-child(1){
+    background: #ff8d12;
+}
+/* .lunbo li :hover{
+    background: #ff8d12;
+} */
+.bottom {
+    width: 100%;
+    height: 0.8rem;
+
+}
+.main{  
+    padding: 0.1rem 0.24rem 0;
+}
+.yema{
+    width: 100%;
+    height: auto;
+    background: white;
+}
+.yemas{
+    width: 100%;
+    height: 0.7rem;
+    padding-top: 0.2rem;
+}
+.yemas a {
+    display: block;
+    float: left;
+    padding: 0.1rem;
+    height: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.3rem;
+    margin-right: 0.15rem;
+}
+.yemas a:nth-child(1) {
+    width: 0.5rem;
+    margin-left: 0.3rem;
+    background: url('../img/s1.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(2) {
+    width: 1.48rem;
+    background: url('../img/s2.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a.a1 {
+    border: 1px solid #666;
+    letter-spacing: 1px;
+    color: #666;
+    width: 1.4rem;
+}
+.yemas a:nth-child(4) {
+    width: 1.48rem;
+    background: url('../img/s3.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(5) {
+    width: 0.5rem;
+    background: url('../img/s4.png') 0 0 no-repeat;
+    background-size: 100%;
+    margin-right: 0;
+}
+.weizhi{
+    width: 100%;
+    height: 0.63rem;
+    line-height: 0.63rem;
+    color: #494747;
+    font-size: 0.22rem;
+    font-weight: bold;
+}
+/* .weizhi a{
+    display: block;
+    float: left;
+} */
+.weizhi .mulua{
+    display: block;
+    float: right;
+    margin-right: 3.8rem;
+    width:1rem;
+    height:100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+ul.content{
+    width: 100%;
+    background-color: #ffffff;
+/*     padding: 0.06rem 0.24rem 0.28rem; */
+    border-bottom: 3px solid #f5f6fa;
+}
+ul.content li{
+    margin-top: 0.34rem;
+}
+.caret{
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border: 0.2rem solid;
+    border-top-color: #01b5ff;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    top: 0.74rem;
+    left: 50%;
+    margin-left: -0.1rem;
+}
+.zhuyao{
+    width: 100%;
+    height: auto;
+    background: white; 
+    padding: 0.1rem 0.24rem 0 0.24rem ;
+}
+.zx_content{
+    width:100%;
+    background-color: #fff;
+    height:auto;
+    padding:0 0.2rem;
+}
+.zx_title{
+    width:100%;
+    height:auto;
+    padding-top: 0.2rem;
+    overflow: hidden;
+}
+.zx_title .shu{
+    width:0.04rem;
+    height:0.2rem;
+    float:left;
+    margin-left: 0;
+}
+.zx_title .con{
+    width:6.26rem;
+    height:auto;
+    float:left;
+    margin-left:0.1rem;
+    margin-top:-0.04rem;
+    color:#333;
+    font-size:0.28rem;
+    line-height: 0.4rem;
+    letter-spacing: 1px;
+    border-bottom: 1px dashed #b8b8b8;
+    padding-bottom:0.05rem;
+}
+.zx_contents img{
+    width:100%!important;
+    height:auto!important;
+}
+.zx_contents{
+    width:100%;
+    height: auto;
+    color:#666;
+    margin-top:0.2rem;
+    line-height: 0.36rem;
+    font-size: 0.24rem;
+    letter-spacing: 1px;
+    border-bottom: 1px dashed #b8b8b8;
+    padding-bottom: 0.2rem;
+}
+.zx-share{
+    width: 100%;
+    height: 1.4rem;
+    padding: 0.2rem 0;
+}
+.zx-share ul{
+    margin: 0.1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+.zx-share ul li img{
+    width: 0.7rem;
+    height: 0.7rem;
+}
+.ly-post-box{
+    width:100%;
+    height:1.6rem;
+    margin-left: -0.24rem;
+    overflow: hidden;
+    background-color: #f5f6fa;
+    padding:0 0.48rem ;
+}
+.ly-post-box .ly-post{
+    width:100%;
+    height:0.4rem;
+    padding-left:0.14rem;
+    overflow: hidden;
+}
+.ly-post-box .ly-post:nth-child(1){
+    margin-top:0.3rem;
+}
+.ly-post-box .ly-post:nth-child(2){
+    margin-top:0.16rem;
+}
+.ly-post-box .ly-post span{
+    font-size:0.26rem;
+    color:#000;
+    line-height: 0.4rem;
+    float: left;
+}
+.ly-post-box .ly-post a{
+    font-size:0.26rem;
+    width:4.78rem;
+    color:#01b5ff;
+    line-height: 0.4rem;
+    float: left;
+    margin-left: 0.1rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.xiangguanq{
+    width: 100%;
+    height:4rem;
+    background-color: #fff;
+    padding: 0 0.24rem 0 0.24rem;
+
+}
+.xiangguanq ul{
+    width:100%;
+    height:100%;
+}
+.xiangguanq li{
+    width:100%;
+    height:0.6rem;
+}
+.xiangguanq li a{
+    float:left;
+    color:#333;
+    width:5.9rem;
+    margin-left: 0.08rem;
+    height:0.6rem;
+    font-size: 0.24rem;
+    line-height: 0.6rem;
+    letter-spacing: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.xiangguanq li .yuan{
+    float:left;
+    width:0.24rem;
+    height:0.24rem;
+    margin-top: 0.2rem;
+    margin-left: -0.08rem;
+    background:url('../img/hot_01.png');
+    background-size: 100%;
+}

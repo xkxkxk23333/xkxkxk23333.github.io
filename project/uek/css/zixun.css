@@ -1,0 +1,315 @@
+body{
+    font-size: 0.32rem;
+    color: #999;
+    background: #F5F6FA;
+}
+header ul{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding:0 0.4rem;
+    }
+header ul li{
+        width: 100%;
+        height: 100%;
+        float: left;
+        color: white;
+        font-size: 0.32rem;
+        text-align: center;
+        line-height: 0.89rem;
+    }
+header ul li a{
+        width: 20%;
+        height: 100%;
+        display: block;
+        float: left;
+    }
+header{
+    width: 100%;
+    height: 0.89rem;
+    background: #007BE3;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    z-index: 1000;
+}
+header .logo{
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/logo.png');
+    background-position: 40% center;
+    background-repeat: no-repeat;
+    background-size: 0.7rem;
+}
+header .logo h3{
+    font-size: 0.36rem;
+    line-height: 0.89rem;
+    float: left;
+    color: white;
+    margin-left: 47%;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 4.21rem;
+    background: url('../img/banner_02.png');
+    background-position:center center ;
+    background-repeat:  no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+.tea_copyright{
+    font-size: 0.2rem;
+    color: #c666;
+    text-align: center;
+    margin: 0.4rem 0 0.2rem 0;
+}
+.lunbo{
+    width: 100%;
+    height: 0.08rem;
+
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+}
+.lunbo li{
+    width: 25%;
+    height: 100%;
+
+}
+.lunbo :nth-child(1){
+    background: #ff8d12;
+}
+/* .lunbo li :hover{
+    background: #ff8d12;
+} */
+.bottom {
+    width: 100%;
+    height: 0.8rem;
+
+}
+.main{  
+    padding: 0.1rem 0.24rem 0;
+}
+.yema{
+    width: 100%;
+    height: auto;
+    background: white;
+}
+.yemas{
+    width: 100%;
+    height: 0.7rem;
+    padding-top: 0.2rem;
+}
+.yemas a {
+    display: block;
+    float: left;
+    padding: 0.1rem;
+    height: 0.5rem;
+    border-radius: 0.4rem;
+    font-size: 0.24rem;
+    text-align: center;
+    line-height: 0.3rem;
+    margin-right: 0.15rem;
+}
+.yemas a:nth-child(1) {
+    width: 0.5rem;
+    margin-left: 0.3rem;
+    background: url('../img/s1.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(2) {
+    width: 1.48rem;
+    background: url('../img/s2.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a.a1 {
+    border: 1px solid #666;
+    letter-spacing: 1px;
+    color: #666;
+    width: 1.4rem;
+}
+.yemas a:nth-child(4) {
+    width: 1.48rem;
+    background: url('../img/s3.png') 0 0 no-repeat;
+    background-size: 100%;
+}
+.yemas a:nth-child(5) {
+    width: 0.5rem;
+    background: url('../img/s4.png') 0 0 no-repeat;
+    background-size: 100%;
+    margin-right: 0;
+}
+.weizhi{
+    width: 100%;
+    height: 0.63rem;
+    line-height: 0.63rem;
+    color: #494747;
+    font-size: 0.22rem;
+    font-weight: bold;
+}
+ul.content{
+    width: 100%;
+    background-color: #ffffff;
+/*     padding: 0.06rem 0.24rem 0.28rem; */
+    border-bottom: 3px solid #f5f6fa;
+}
+ul.content li{
+    margin-top: 0.34rem;
+}
+.caret{
+    position: absolute;
+    width: 0rem;
+    height: 0rem;
+    border: 0.2rem solid;
+    border-top-color: #01b5ff;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    top: 0.74rem;
+    left: 50%;
+    margin-left: -0.1rem;
+}
+.zhuyao{
+    width: 100%;
+    height: auto;
+    background: white; 
+    padding: 0.1rem 0.24rem 0 0.24rem ;
+}
+.content li img{
+    width: 100%;
+    height: 100%;
+}
+.content h2 {
+    font-size: 0.28rem;
+    color: #000;
+    font-weight: normal;
+    margin-bottom: 0.22rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.media_con {
+    height: 1.79rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.media_con .img {
+    width: 2.06rem;
+    height: 100%;
+    float: left;
+    position: relative;
+}
+.media_con .img .floor {
+    width: 1.93rem;
+    height: 1.45rem;
+    background: url('../img/media_line.png') 0 0 no-repeat;
+    background-size: cover;
+    float: right;
+}
+.media_con .img .ceil {
+    width: 1.93rem;
+    height: 1.45rem;
+    position: absolute;
+    background-color: #c8c8c8;
+    top: 0.15rem;
+    left: 0;
+}
+.media_con p {
+    float: right;
+    width: 4.2rem;
+    height: 1.4rem;
+    font-size: 0.24rem;
+    color: #494747;
+    line-height: 0.36rem;
+    overflow: hidden;
+}
+.media_rem {
+    height: 0.6rem;
+    border-bottom: 1px solid #b8b8b8;
+}
+.media_rem div{
+    height: 100%;
+    line-height: 0.6rem;
+}
+.media_rem div i {
+    display: inline-block;
+    width: 0.31rem;
+    height: 0.31rem;
+    margin-top: 0.15rem;
+    float: left;
+    margin-right: 0.05rem;
+}
+.media_rem .click i {
+    background: url('../img/media_icon.png') -0.32rem 0 no-repeat;
+    background-size: cover;
+}
+.media_rem div span {
+    font-size: 0.2rem;
+    float: left;
+    margin-top: -0.01rem;
+    color: #666;
+}
+.media_rem .share {
+    width: 2rem;
+    float: right;
+    overflow: hidden;
+}
+.media_rem .time i {
+    background: url('../img/media_icon.png') 0 0 no-repeat;
+    background-size: cover;
+}
+.media_rem .share i {
+    background: url('../img/media_icon.png') -0.7rem 0 no-repeat;
+    background-size: cover;
+}
+.media_rem .click {
+    width: 2.4rem;
+    float: left;
+}
+.media_rem .time {
+    width: 2.1rem;
+    float: left;
+}
+div.right {
+    padding-left: 0.29rem;
+    padding-bottom: 0.18rem;
+    float: left;
+    width: 4.3rem;
+}
+div.right .title {
+    overflow: hidden;
+}
+div.right .title h2 {
+    float: left;
+    font-size: 0.26rem;
+    font-weight: normal;
+    color: #000;
+}
+div.right .title span {
+    float: left;
+    font-size: 0.18rem;
+    color: #444;
+    margin-top: 0.06rem;
+    margin-left: 0.1rem;
+}
+div.right .xian {
+    width: 4.25rem;
+    height: 0;
+    border-bottom: 1px dashed #b8b8b8;
+    margin-top: 0.08rem;
+    margin-bottom: 0.08rem;
+}
+div.right .sales {
+    width: 100%;
+    font-size: 0.24rem;
+    color: #94d43b;
+}
+div.right .sales span {
+    font-size: 0.26rem;
+    font-weight: bold;
+}

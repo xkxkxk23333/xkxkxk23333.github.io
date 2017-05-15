@@ -1,0 +1,115 @@
+﻿.top{
+width: 100%;
+height: 0.86rem;
+border-bottom: 1px solid #E1E1E1;
+background: #EEE;
+overflow: hidden;
+}
+.top1{
+    float: left;
+    width: 23%;
+    text-align: center;
+    line-height: 0.88rem;
+    color: #333;
+    font-size: 0.28rem;
+}
+.midd{
+	width: 100%;
+	background: white;
+	overflow: hidden;
+}
+.left{
+	width: 23%;
+	float:left;
+	height: 12.46rem;
+	overflow-x: hidden;
+	overflow-y: scroll;	
+}
+.right{
+	width: 77%;
+	background: white;
+	float: left;
+	height: 12.46rem;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+.left ul{
+	width: 100%;
+	
+	font-size: 0.28rem;
+}
+.left ul li{
+	border-bottom: 1px solid #E1E1E1;
+	height: 1.2rem;
+	width: 100%;
+	color: #333;
+	text-align: center;
+	line-height: 1.2rem;
+	background: #f0f0f0;
+}
+.left ul li:nth-child(1){
+	background: white;
+}
+.right1{
+	width: 5.3rem;
+	height: 5.2rem;
+	background: white;
+	margin: auto;
+}
+ .rightwen{
+	width: 100%;
+	height: 0.88rem;
+	 font-size:0.28rem;
+    line-height: 0.28rem;
+    color: #9B9B9B;
+    padding: 0.3rem 0;
+}
+.rightwen1{
+	width: 100%;
+	height: 0.88rem;
+	 font-size:0.28rem;
+    line-height: 0.28rem;
+    color: #9B9B9B;
+    padding: 0.3rem 0;
+    margin-left: 0.3rem;
+}
+.ul2{
+		width: 100%;
+	height: 2.1656rem;
+	background: white;
+	overflow: hidden;
+}
+.ul2 ul li{
+	 float: left;
+    width: 33.33333%;
+    margin: 0.1rem 0;
+	height: 1.9656rem;
+}
+.ul1{
+	width: 100%;
+	height: 4.3312rem;
+	background: white;
+	overflow: hidden;
+}
+
+.left ul{
+	width: 100%;
+	height: 100%;
+}
+.right1  ul li{
+	 float: left;
+    width: 33.33333%;
+    margin: 0.1rem 0;
+	height: 1.9656rem;
+
+}
+.dayi{
+	width: 1.3456rem;
+
+}
+.yurong{
+	font-size: 0.28rem;
+	text-align: center;
+	 width: 78%;
+} 

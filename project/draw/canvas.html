@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        canvas {
+            background: #ccc;
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            margin: auto;
+        }
+
+        * {
+            user-select: none;
+        }
+
+        nav {
+            width: auto;
+            height: 60px;
+            background: cyan;
+            position: absolute;
+            top: 5px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav section {
+            float: left;
+            text-align: center;
+            line-height: 60px;
+        }
+
+        input[type=button] {
+            width: 150px;
+            height: 30px;
+            background: #7abaff;
+            color: white;
+            border: 0;
+            border-radius: 5px;
+            margin-top: 15px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <section>
+        <label for="drawType">绘制类型</label>
+        <select name="" id="drawType">
+            <option value="rect">矩形</option>
+            <option value="line">直线</option>
+            <option value="circlein">内切圆</option>
+            <option value="circleout">外接圆</option>
+            <option value="circlecenter">固定圆心</option>
+            <option value="side">多边形</option>
+            <option value="pen">铅笔</option>
+            <option value="eraser">橡皮擦</option>
+        </select>
+    </section>
+    <section>
+        <label for="color">选择颜色</label>
+        <input type="color" id="color">
+    </section>
+    <section>
+        <label for="lineWidth">选择线宽</label>
+        <input type="number" id="lineWidth" min="2" value="2" step="2" max="20">
+    </section>
+
+    <section>
+        <label for="style">填充类型</label>
+        <select name="" id="style">
+            <option value="stroke">描边</option>
+            <option value="fill">填充</option>
+        </select>
+    </section>
+    <section>
+        <label for="side">选择边数</label>
+        <input type="number" id="side" value="3" min="3" max="12">
+    </section>
+    <input type="button" value="撤销" id="redo">
+    <input type="button" value="保存" id="save">
+    <input type="button" value="清空" id="clear">
+</nav>
+<canvas width="800px" height="500px">
+</canvas>
+
+</body>
+<script src="draw.js"></script>
+<script>
+    var canvas = document.querySelector("canvas");
+    var drawType = document.querySelector("#drawType");
+    var color = document.querySelector("#color");
+    var lineWidth = document.querySelector("#lineWidth");
+    var style = document.querySelector("#style");
+    var cobj = canvas.getContext("2d");
+    var side = document.querySelector("#side");
+    var redo = document.querySelector("#redo");
+    var save = document.querySelector("#save");
+    var clear = document.querySelector("#clear");
+    function deg(d) {
+        return d / 180 * Math.PI;
+    }
+    var s = "rect";
+    drawType.onchange = function () {
+        s = this.value;
+    }
+    var c = "#000";
+    color.onchange = function () {
+        c = this.value;
+    }
+    var w = "2";
+    lineWidth.onchange = function () {
+        w = this.value;
+    }
+    var st = "stroke";
+    style.onchange = function () {
+        st = this.value;
+    }
+    var si = "3";
+    side.onchange = function () {
+        si = this.value;
+    };
+    var data = [];
+    redo.onclick = function () {
+        if (data.length == 0) {
+            alert("没有更多了");
+            return;
+        }
+        cobj.clearRect(0, 0, 800, 500);
+        data.pop();
+        if (data.length == 0) {
+            return;
+        }
+        cobj.putImageData(data[data.length - 1], 0, 0)
+    };
+    save.onclick = function () {
+        var r = canvas.toDataURL();
+        location.assign(r);
+    };
+    clear.onclick = function () {
+        cobj.clearRect(0, 0, 800, 500)
+        data = [];
+    };
+    canvas.onmousedown = function (e) {
+        var ox = e.offsetX;
+        var oy = e.offsetY;
+        var drw = new Draw(cobj, {color: c, width: w, style: st,});
+        if (s == "pen") {
+            cobj.beginPath();
+            cobj.moveTo(ox, oy);
+        }
+        canvas.onmousemove = function (e) {
+            var mx = e.offsetX;
+            var my = e.offsetY;
+            if (s != "eraser") {
+                cobj.clearRect(0, 0, 800, 500);
+
+                if (data.length != 0) {
+                    cobj.putImageData(data[data.length - 1], 0, 0)
+                }
+            }
+            drw[s](ox, oy, mx, my, si);
+        }
+        document.onmouseup = function () {
+            data.push(cobj.getImageData(0, 0, 800, 500));
+            canvas.onmousemove = null;
+            document.onmouseup = null;
+        }
+    }
+</script>
+</html>
