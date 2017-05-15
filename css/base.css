@@ -1,0 +1,12 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+a{
+	color: #808080;
+	text-decoration: none;
+}
+ul,li,ol{
+	list-style:none;
+}
