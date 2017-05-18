@@ -1,0 +1,17 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	/* 去除a标签下划线 */
+	box-sizing: border-box;
+	font-family: "苹方";
+
+}
+ul,li,ol{
+	list-style:none;
+}
+a{
+	color: black;
+	text-decoration: none;
+}
+	/* }去除默认样式 */

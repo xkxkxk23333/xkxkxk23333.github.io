@@ -29,7 +29,6 @@
 	line-height: 0;
 	clear: both;
 
-	display: 
 }
 /* 属性选择器 */
 [class*='col-']{/* 所有有col-的 */

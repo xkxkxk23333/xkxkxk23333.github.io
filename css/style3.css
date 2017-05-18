@@ -1,0 +1,159 @@
+body {
+	background: rgba(17, 3, 16, 0.72);
+	color: #fceeb8;
+	font-family: 'BioRhyme', serif;
+}
+
+a {
+	color: #fff;
+}
+
+a:hover,
+a:focus {
+	color: #fceeb8;
+}
+
+.codrops-header {
+	background: none;
+}
+
+.codrops-header__tagline,
+.codrops-demos,
+.content__description,
+.content__meta {
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+.codrops-demos a.current-demo {
+	color: #fceeb8;
+}
+
+.calendar {
+	-webkit-perspective: 2500px;
+	perspective: 2500px;
+}
+
+.cube__side,
+.no-js .cube {
+	border: 3px solid #fff;
+	outline: 1px solid #fff;
+	background: #f0f0f0 url('../img/ball-outer_be7df66.png') no-repeat center center;
+	background-size: 100%;
+}
+.cube:not(.cube--inactive):nth-child(1) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(1) {
+	background-image: url(../img/h52.png);
+}
+
+.cube:not(.cube--inactive):nth-child(2) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(2) {
+	background-image: url(../img/css2.png);
+}
+
+.cube:not(.cube--inactive):nth-child(3) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(3) {
+	background-image: url(../img/js.png);
+}
+
+.cube:not(.cube--inactive):nth-child(4) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(4) {
+	background-image: url(../img/ps.png);
+}
+
+.cube:not(.cube--inactive):nth-child(5) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(5) {
+	background-image: url(../img/ai.png);
+}
+
+.cube:not(.cube--inactive):nth-child(6) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(6) {
+	background-image: url(../img/jq.png);
+}
+
+.cube:not(.cube--inactive):nth-child(7) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(7) {
+	background-image: url(../img/Ajax.png);
+}
+
+.cube:not(.cube--inactive):nth-child(8) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(8) {
+	/*background-image: url(../img/1.png);*/
+}
+
+.cube:not(.cube--inactive):nth-child(9) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(9) {
+	/*background-image: url(../img/2.png);*/
+}
+
+.cube:not(.cube--inactive):nth-child(10) .cube__side,
+.no-js .cube:not(.cube--inactive):nth-child(10) {
+	/*background-image: url(../img/3.png);*/
+}
+
+.cube--inactive .cube__side,
+.no-js .cube--inactive {
+	background: #e6e6e6;
+}
+
+
+/* With JS we insert a number span into the cube */
+
+
+.no-js .cube::after {
+	font-weight: 700;
+	color: #cc0019;
+	background: #fff;
+	width: 100%;
+	text-align: center;
+	top: 50%;
+	height: 1.5em;
+	line-height: 1.5;
+	bottom: auto;
+	margin: -0.75em 0 0;
+}
+
+.cube--inactive .cube__number,
+.no-js .cube--inactive::after {
+	color: #cac9c9;
+}
+
+.js .content__block {
+	width: 100%;
+	padding: 0 5vw 0 20vw;
+}
+
+.js .content__description {
+	padding: 0 0 0 4vw;
+}
+
+.content__number {
+	/*color: #fff;*/
+	font-weight: bold;
+	line-height: 0.5;
+	letter-spacing: -0.175em;
+	font-size: 30vw;
+	left: -5vw;
+	bottom: 8vh;
+}
+
+.content__title {
+	font-size: 6vw;
+}
+
+.title {
+	color: #fceeb8;
+	right: auto;
+	left: 3vw;
+}
+
+@media screen and (max-width: 50.75em) {
+	.js .content__block {
+		padding: 4em 2em 0;
+		-webkit-justify-content: flex-start;
+		-ms-flex-pack: start;
+		justify-content: flex-start;
+	}
+	.content__number {
+		bottom: 30vh;
+	}
+}
