@@ -54,7 +54,8 @@
             background-size:100% ;
         }
         .fla{
-            background: cyan;
+            background:  url('qi.png');
+            background-size: 100% 100%;
         }
         .control{
             width: 200px;
@@ -66,7 +67,8 @@
         .control>div{
             width: 150px;
             height: 60px;
-            background: cyan;
+            background:  url('bgbg.png');
+            background-size: 100% 100%;
             margin:30px auto;
             text-align: center;
             line-height: 60px;
@@ -91,10 +93,12 @@
         ul{
             height: 150px;
             width: 100%;
-            background: red;
+            background:  url('bg.png');
+            background-size: 100% 100%;
             display: none;
             font-size: 12px;
             line-height: 40px;
+            padding-top: 30px;
         }
         .mask{
             width: 100%;
@@ -180,7 +184,8 @@
         .startScene>div{
             width: 150px;
             height: 60px;
-            background: cyan;
+            background: url('bgbg.png');
+            background-size: 100% 100%;
             margin:30px auto;
             text-align: center;
             line-height: 60px;
@@ -193,18 +198,19 @@
         .choose{
             position: fixed;
             top:50px;
-            width: 502px;
+            width: 100%;
             height: 502px;
             left:0;
             right:0;
             margin:auto;
-            background: #b1ebeb;
+            background: rgba(177, 235, 235, 0.48);
             display: none;
         }
         .choose>div{
             width: 150px;
             height: 60px;
-            background: cyan;
+            background:  url('bgbg.png');
+            background-size: 100% 100%;
             margin:30px auto;
             text-align: center;
             line-height: 60px;
@@ -521,7 +527,9 @@
             restart();
             $(".mask2,.mask").fadeOut(500);
         });
-
+        $(".status").click(function () {
+            alert("您已开始游戏，请完成这一局吧");
+        });
     })
 
 </script>
